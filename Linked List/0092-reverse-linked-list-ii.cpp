@@ -33,11 +33,11 @@ public:
         if(a) a->next = nullptr; //edge case if left = 1 (1-1 == 0), giving nullptr exception
         c->next = nullptr;
 
-        c = reverse(b);
+        ListNode* newHead = reverse(b);
 
-        if (a) a->next = c; //edge case if left = 1
+        if (a) a->next = newHead; //edge case if left = 1
         b->next = d;
 
-        return (a != nullptr)? head : c; //reversing the whole linkedlist, d is still at nullptr 
+        return (a != nullptr)? head : newHead; //reversing the whole linkedlist, d is still at nullptr 
     }
 };
