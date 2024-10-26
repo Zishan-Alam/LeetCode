@@ -22,3 +22,10 @@ public:
         return result;
     }
 };
+
+//Time Complexity: 𝑂(𝑛⋅𝑚log𝑚)
+//Space Complexity: O(n⋅m)
+
+//m --> length of each string
+//n --> number of strings.
+
