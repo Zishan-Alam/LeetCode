@@ -1,3 +1,5 @@
+// Time Complexity: O(n + k * log n)
+// Space Complexity: O(n)
 class Solution {
 public:
     int minStoneSum(vector<int>& piles, int k) {
