@@ -1,3 +1,42 @@
+//Bucket Sort Approach
+//Time complexity is O(n)
+//Space complexity is O(n).
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        int n = nums.size();
+        //Step-01 : Storing frequency in map
+        unordered_map<int,int> mp;
+        for(auto &it : nums) mp[it]++;
+
+        //Step-02 : Storing elements on bucket on the basis of frequency
+        vector< vector<int> > bucket(n+1);
+        //Index     --> frequency
+        //Value     --> elements
+        //bucket[i] --> elements having `i` frequency
+
+        for(auto &it : mp) {
+            int element     = it.first;
+            int frequency   = it.second;
+
+            bucket[frequency].push_back(element);
+        }
+
+        //Step-03 : Storing the result
+        vector<int> result;
+        for(int i=n; i>=0; i--) {
+            if(bucket[i].size() == 0) continue;
+
+            while(bucket[i].size() > 0 && k > 0) {
+                result.push_back(bucket[i].back());
+                bucket[i].pop_back();
+                k--;
+            }
+        }
+        return result;
+    }
+};
+
 //Using Min Heap
 //Time complexity is O(n + m log k).    (k --> top frequent elements, m --> number of unique elements in map)
 //Space complexity is O(n + k).         (k --> top frequent elements in heap, n --> elements in map)
