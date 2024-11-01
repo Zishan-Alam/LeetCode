@@ -10,7 +10,7 @@ public:
 };
 
 // Heap Approach
-//TC : O(n)
+//TC : O(nlogk)
 //SC : O(k)
 class Solution {
 public:
