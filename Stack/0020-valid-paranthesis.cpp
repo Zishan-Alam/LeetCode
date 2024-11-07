@@ -1,33 +1,45 @@
+// TC : 0(n) where n is the length of the string
+// SC : 0(n) in the worst case when all are opening brackets
 class Solution {
 public:
     bool isValid(string s) {
         stack<char> st;
 
-        // Traverse the string
-        for (int i = 0; i < s.size(); i++) {
-            // If it's an opening bracket, push it onto the stack
-            if (s[i] == '[' || s[i] == '{' || s[i] == '(') {
-                st.push(s[i]);
+        for(auto &ch : s) {
+
+            if(st.empty() || ch == '(' || ch == '[' || ch == '{') st.push(ch);
+
+            if(ch == ')') {
+                if(st.top() == '(') st.pop();
+                else return false;
             }
-            else {
-                // If we encounter a closing bracket and the stack is empty, it's invalid
-                if (st.empty()) {
-                    return false;
-                }
-
-                char ch = st.top();
-                st.pop();
-
-                // Check for matching pair
-                if ((s[i] == ')' && ch != '(') ||
-                    (s[i] == ']' && ch != '[') ||
-                    (s[i] == '}' && ch != '{')) {
-                    return false;
-                }
+            if(ch == ']') {
+                if(st.top() == '[') st.pop();
+                else return false;
+            }
+            if(ch == '}') {
+                if(st.top() == '{') st.pop();
+                else return false;
             }
         }
+        return st.empty();
+    }
+};
+// Cleaner code
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> st;
 
-        // If the stack is empty, all parentheses were matched; otherwise, it's invalid
+        for(auto &ch : s) {
+
+            if(ch == '(') st.push(')');
+            else if(ch == '[') st.push(']');
+            else if(ch == '{') st.push('}');
+
+            else if(st.empty() || st.top() != ch) return false;
+            else st.pop();
+        }
         return st.empty();
     }
 };
