@@ -1,3 +1,5 @@
+//time complexity of this solution is O(n^2) in the worst case
+//space complexity is O(h), where h is the height of the tree
 class Solution {
 public:
 
