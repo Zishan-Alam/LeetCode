@@ -29,16 +29,14 @@ Each folder is categorized based on the problem type or algorithm used, and the 
 
 The following programming languages have been used to solve the problems:
 
-- Python (`.py`)
 - C++ (`.cpp`)
-- JavaScript (`.js`)
-- Java (`.java`)
-- Other (depending on the problem)
+- Other languages might be included in the future.
 
 ## Directory Structure
 
 The repository is organized as follows:
 
+```
 leetcode-solutions/
 ├── Arrays/
 │   ├── 001_two_sum.cpp
@@ -65,7 +63,7 @@ leetcode-solutions/
 │   ├── 009_palindrome_number.cpp
 │   └── 050_pow(x,n).cpp
 └── README.md
-
+```
 
 ### Example:
 
@@ -93,5 +91,3 @@ For any questions or suggestions, feel free to reach out via [GitHub issues](htt
 ---
 
 Happy coding! :rocket:
-
-
