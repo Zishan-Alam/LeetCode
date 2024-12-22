@@ -12,18 +12,33 @@ This repository contains my solutions to various LeetCode problems. Each problem
 
 ## About
 
-I am solving problems on LeetCode to sharpen my coding skills and keep track of my progress. This repository contains solutions to problems in areas such as:
+This repository is a comprehensive collection of solutions to problems from LeetCode. The primary goal of this repository is to enhance problem-solving skills, build an understanding of different algorithms and data structures, and provide a reference for others tackling similar problems. Each problem is addressed with clarity and efficiency in mind, with detailed comments explaining the approach, logic, and complexities involved.
 
-- Arrays
-- Strings
-- Dynamic Programming
-- Graphs
-- Trees
-- Linked Lists
-- Math
-- and more...
+Key Highlights:
 
-Each folder is categorized based on the problem type or algorithm used, and the solution file names include the problem name or number for easy reference.
+- Problems are categorized into various domains such as:
+  - Arrays
+  - Strings
+  - Dynamic Programming
+  - Graphs
+  - Trees
+  - Linked Lists
+  - Math
+  - and more...
+
+- Solutions are designed to explore multiple approaches, comparing brute force methods with optimized algorithms wherever applicable. These comparisons help in understanding trade-offs and decision-making processes in algorithm design.
+
+- Focus is given to writing clean, efficient, and maintainable code, adhering to best practices in programming. Each solution file is accompanied by comprehensive comments, outlining the logic and reasoning behind the implementation. This makes it easier for readers to grasp the underlying concepts.
+
+- Regular updates are made to include solutions for new problems and improvements to existing ones. As new problems are added to LeetCode, this repository grows to encompass those as well, ensuring it remains a current and relevant resource.
+
+- The repository is structured to aid systematic learning. Beginners can start with simpler problems categorized under Arrays or Strings, gradually progressing to more complex domains such as Graphs and Dynamic Programming. This progression enables a step-by-step understanding of algorithms and data structures.
+
+- Special attention is paid to commonly asked problems in technical interviews. Solutions include insights into time and space complexity, edge cases, and alternative approaches, providing a holistic understanding of the problem.
+
+Whether you're a beginner looking to understand basic problem-solving techniques or an experienced programmer seeking to optimize your solutions, this repository aims to be a valuable resource for all. By diving into these solutions, you can not only enhance your coding skills but also gain deeper insights into the thought process behind solving algorithmic challenges.
+
+Each folder is categorized based on the problem type or algorithm used, and the solution file names include the problem name or number for easy reference. This structure ensures quick navigation and a seamless user experience.
 
 ## Languages Used
 
