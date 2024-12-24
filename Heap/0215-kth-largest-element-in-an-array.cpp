@@ -9,7 +9,7 @@ public:
     }
 };
 
-// Heap Approach
+// Heap Approach 
 //TC : O(nlogk)
 //SC : O(k)
 class Solution {
