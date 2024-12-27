@@ -1,6 +1,7 @@
 //Sorting Approach
 // TC : O(nlogn)
 // SC : O(1)
+
 class Solution {
 public:
     int thirdMax(vector<int>& nums) {
