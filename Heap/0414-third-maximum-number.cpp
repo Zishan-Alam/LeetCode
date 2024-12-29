@@ -8,7 +8,6 @@ public:
         
         sort(nums.begin(), nums.end());
         
-
         auto last = unique(nums.begin(), nums.end());
         nums.erase(last, nums.end());
 
