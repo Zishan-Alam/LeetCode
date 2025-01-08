@@ -11,6 +11,7 @@
 class Solution {
 public:
 
+
     vector<string> result;
 
     bool isValid(string temp) {
