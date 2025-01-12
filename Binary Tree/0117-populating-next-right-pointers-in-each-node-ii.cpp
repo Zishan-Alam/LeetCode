@@ -1,3 +1,4 @@
+//Constant Space
 class Solution {
 public:
     Node* connect(Node* root) {
@@ -21,6 +22,38 @@ public:
             }
             head = temp->next;                  //for next iteration
         }
+        return root;
+    }
+};
+//BFS
+class Solution {
+public:
+
+    Node* findNext(Node* node) {
+        if(!node) return nullptr;
+        return node->left? node->left : node->right;
+    }
+
+    void connectNodes(Node* node, Node* nextNode) {
+        if(!node) return;
+        node->next = nextNode;
+
+        if(node->left) {
+            node->left->next = node->right ? node->right : findNext(node->next);
+        }
+        if(node->right) {
+            node->right->next = findNext(node->next);
+        }
+
+        connectNodes(node->right, findNext(node->next));
+        connectNodes(node->left, node->right ? node->right : findNext(node->next));
+    }
+
+    Node* connect(Node* root) {
+        if(!root) return root;
+
+        connectNodes(root, nullptr);
+
         return root;
     }
 };
