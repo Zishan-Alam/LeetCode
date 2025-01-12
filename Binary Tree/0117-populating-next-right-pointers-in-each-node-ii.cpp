@@ -25,7 +25,7 @@ public:
         return root;
     }
 };
-//BFS
+//DFS
 class Solution {
 public:
 
