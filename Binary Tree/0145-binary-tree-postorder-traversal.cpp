@@ -1,33 +1,46 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
+//Recursive Approach
 class Solution {
 public:
 
-    vector<int> postorderHelper(TreeNode* root, vector<int> &res){
-        //base case
-        if(root == nullptr){
-            return res;
-        }
-        //Left
-        postorderHelper(root->left, res);
-        //Right
-        postorderHelper(root->right, res);
-        //Node
-        res.push_back(root->val);
+    void solve(TreeNode* root, vector<int> &res) {
+        if(!root) return;
 
+        solve(root->left, res);
+        solve(root->right, res);
+        res.push_back(root->val);
+    }
+
+    vector<int> postorderTraversal(TreeNode* root) {
+        if(!root) return {};
+        vector<int> res;
+
+        solve(root, res);
         return res;
     }
+};
+
+//Iterative Approach
+class Solution {
+public:
     vector<int> postorderTraversal(TreeNode* root) {
+        if(!root) return {};
         vector<int> res;
-        return postorderHelper(root, res);
+
+        stack<TreeNode*> st;
+        st.push(root);
+
+        while(!st.empty()) {
+            TreeNode* node = st.top();
+            int val = st.top()->val;
+            st.pop();
+
+            res.push_back(val);
+
+            if(node->left)  st.push(node->left);
+            if(node->right) st.push(node->right);
+        }
+        reverse(begin(res), end(res));
+        return res;
     }
 };
+
