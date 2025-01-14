@@ -35,3 +35,35 @@ public:
         return solve(inorder, postorder, inStart, inEnd, postStart, postEnd);
     }
 };
+
+//TC : O(n)
+//SC : O(n)
+class Solution {
+public:
+
+    TreeNode* solve(vector<int>& inorder, vector<int>& postorder, int inStart, int inEnd, int postStart, int postEnd, unordered_map<int ,int> &mp) {
+        if(inStart > inEnd && postStart > postEnd) return nullptr;
+
+        int rootVal = postorder[postEnd];
+        int inIdx = mp[rootVal];
+
+        int leftSize  = inIdx - inStart;
+        int rightSize = inEnd - inIdx;
+
+        TreeNode* root = new TreeNode(rootVal);
+        root->left  = solve(inorder, postorder, inStart, inIdx-1, postStart, postStart + leftSize - 1, mp);
+        root->right = solve(inorder, postorder, inIdx+1, inEnd, postEnd - rightSize, postEnd-1, mp);
+
+        return root;
+    }
+
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+        int n = inorder.size();
+        unordered_map<int, int> mp;
+        for(int i=0; i<n; i++) {
+            mp[inorder[i]] = i;
+        }
+
+        return solve(inorder, postorder, 0, n-1, 0, n-1, mp);
+    }
+};
