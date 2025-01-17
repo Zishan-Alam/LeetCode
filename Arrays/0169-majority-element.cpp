@@ -18,14 +18,14 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int res = 0;
-        int majority = 0;
+        int count = 0;
         
         for (int n : nums) {
-            if (majority == 0) {
+            if (count == 0) {
                 res = n;
             }
             
-            majority += (res == n) ? 1 : -1;
+            count += (res == n) ? 1 : -1;
         }
         
         return res;        
