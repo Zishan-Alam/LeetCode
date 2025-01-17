@@ -14,20 +14,17 @@ public:
 };
 
 //constant space
+//Moore's Voting Algorithm
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        int res = 0;
+        int res = -1;
         int count = 0;
-        
-        for (int n : nums) {
-            if (count == 0) {
-                res = n;
-            }
-            
-            count += (res == n) ? 1 : -1;
+
+        for(auto &it: nums) {
+            if(count == 0) res = it;
+            count += (res == it)? 1 : -1;
         }
-        
-        return res;        
+        return res;
     }
 };
