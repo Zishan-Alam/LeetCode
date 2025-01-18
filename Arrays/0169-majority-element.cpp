@@ -13,6 +13,7 @@ public:
     }
 };
 
+
 //constant space
 //Moore's Voting Algorithm
 class Solution {
