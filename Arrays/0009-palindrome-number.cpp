@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     long long int rev(int x) {
         long long int rev = 0;
         while(x != 0) {
