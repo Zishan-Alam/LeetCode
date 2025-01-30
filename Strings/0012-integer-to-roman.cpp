@@ -15,6 +15,6 @@ public:
             num = num % val[i];
         }
         
-        return result;
+        return result; 
     }
 };
