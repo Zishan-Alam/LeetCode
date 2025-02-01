@@ -11,7 +11,6 @@ public:
             if(num == 0) break;
             int times = num / val[i];
             while(times--) result += sym[i];
-            
             num = num % val[i];
         }
         return result; 
