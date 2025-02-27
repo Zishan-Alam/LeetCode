@@ -10,8 +10,7 @@ public:
             rev = (rev * 10) + lastDigit;
             x = x / 10;
         }
-        return rev;
-        
+        return rev; 
     }
 };
 
