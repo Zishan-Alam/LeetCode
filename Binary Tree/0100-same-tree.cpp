@@ -16,7 +16,13 @@ public:
         //if values of both are different
         if(p->val != q->val){
             return false;   
-        }        
+        }      
+
+
+
+
+
+        
         //recursive call for left and right
         bool ans = isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
         return ans;
